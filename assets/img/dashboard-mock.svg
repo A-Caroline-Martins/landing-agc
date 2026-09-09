@@ -1,0 +1,50 @@
+<svg
+  width="340"
+  height="380"
+  viewBox="0 0 340 380"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Dashboard Orflie mostrando agendados, confirmados, no-shows e atividade recente em tempo real"
+  font-family="Poppins, 'Segoe UI', sans-serif"
+>
+  <!-- header -->
+  <rect x="0" y="0" width="340" height="36" fill="#000000" />
+  <text x="14" y="23" fill="#ffffff" font-size="12" font-weight="600">
+    Dashboard Orflie · Hoje
+  </text>
+  <circle cx="280" cy="18" r="4" fill="#3ddc71" />
+  <text x="290" y="22" fill="rgba(255,255,255,0.7)" font-size="10" font-weight="500">
+    Ao vivo
+  </text>
+
+  <!-- stats row -->
+  <rect x="0" y="36" width="340" height="110" fill="#ffffff" />
+  <line x1="113.33" y1="36" x2="113.33" y2="146" stroke="#e0e0e0" stroke-width="1" />
+  <line x1="226.67" y1="36" x2="226.67" y2="146" stroke="#e0e0e0" stroke-width="1" />
+
+  <text x="56.67" y="80" fill="#000000" font-size="22" font-weight="600" text-anchor="middle" font-family="'Playfair Display', Georgia, serif">14</text>
+  <text x="56.67" y="98" fill="#737373" font-size="8" font-weight="600" text-anchor="middle" letter-spacing="0.4">AGENDADOS</text>
+  <text x="56.67" y="114" fill="#1f9d55" font-size="9" font-weight="600" text-anchor="middle">▲ 12%</text>
+
+  <text x="170" y="80" fill="#000000" font-size="22" font-weight="600" text-anchor="middle" font-family="'Playfair Display', Georgia, serif">12</text>
+  <text x="170" y="98" fill="#737373" font-size="8" font-weight="600" text-anchor="middle" letter-spacing="0.4">CONFIRMADOS</text>
+  <text x="170" y="114" fill="#1f9d55" font-size="9" font-weight="600" text-anchor="middle">▲ 8%</text>
+
+  <text x="283.33" y="80" fill="#000000" font-size="22" font-weight="600" text-anchor="middle" font-family="'Playfair Display', Georgia, serif">0</text>
+  <text x="283.33" y="98" fill="#737373" font-size="8" font-weight="600" text-anchor="middle" letter-spacing="0.4">NO-SHOWS</text>
+  <text x="283.33" y="114" fill="#1f9d55" font-size="9" font-weight="600" text-anchor="middle">▼ 67%</text>
+
+  <!-- activity feed -->
+  <rect x="0" y="146" width="340" height="234" fill="#f7f7f7" />
+  <line x1="0" y1="146" x2="340" y2="146" stroke="#e0e0e0" stroke-width="1" />
+
+  <text x="14" y="182" fill="#404040" font-size="11">✓ Marcos R. confirmou consulta</text>
+  <text x="326" y="182" fill="#999999" font-size="10" text-anchor="end">14:32</text>
+
+  <text x="14" y="228" fill="#404040" font-size="11">⟳ Carolina S. reagendou</text>
+  <text x="326" y="228" fill="#999999" font-size="10" text-anchor="end">14:28</text>
+  <text x="14" y="242" fill="#404040" font-size="11">slot preenchido</text>
+
+  <text x="14" y="288" fill="#404040" font-size="11">✉ Lead novo: Juliana M.</text>
+  <text x="326" y="288" fill="#999999" font-size="10" text-anchor="end">14:25</text>
+</svg>

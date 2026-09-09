@@ -549,6 +549,131 @@ header {
 }
 
 /* ==========================================================================
+   Tecnologia Própria
+   ========================================================================== */
+.technology-container {
+  background-color: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.technology-content {
+  flex: 1 1 380px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
+}
+
+.technology-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.technology-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.technology-image {
+  flex: 1 1 420px;
+  max-width: 480px;
+  display: flex;
+
+}
+
+.technology-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Banner de Urgência
+   ========================================================================== */
+.urgency-container {
+  background-color: var(--color-black);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.75rem var(--section-padding-x);
+  text-align: center;
+}
+
+.urgency-text {
+  color: var(--color-white);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Antes de Decidir (objeção)
+   ========================================================================== */
+.objection-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+/* ==========================================================================
+   Programa de Parcerias
+   ========================================================================== */
+.partners-container {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+/* ==========================================================================
+   Calculadora de Perda
+   ========================================================================== */
+.calculator-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.calc-box {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: left;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
    Argumento Financeiro (Planos)
    ========================================================================== */
 .pricing-container {
@@ -820,7 +945,7 @@ header {
    Dúvidas Frequentes (FAQ)
    ========================================================================== */
 .faq-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -973,6 +1098,89 @@ header {
   font-size: var(--font-size-xs);
   text-align: center;
   color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   Fecho Final (CTA)
+   ========================================================================== */
+.final-cta-container {
+  background-color: var(--color-agc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.final-cta-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.final-cta-title {
+  max-width: 640px;
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: var(--font-title-lg);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.final-cta-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-md);
+}
+
+.final-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.final-cta-buttons .btn-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-agc);
+}
+
+.final-cta-buttons .btn-cta-outline a {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.final-cta-note {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--font-size-sm);
+}
+
+.final-cta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 640px;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.final-cta-badges span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-sm);
 }
 
 /* ==========================================================================
@@ -1157,7 +1365,8 @@ header {
 
 /* Planos empilham antes das grades gerais */
 @media (max-width: 700px) {
-  .pricing-grid {
+  .pricing-grid,
+  .calc-box {
     grid-template-columns: 1fr;
   }
 }
@@ -1215,11 +1424,24 @@ header {
   .services-container,
   .how-container,
   .agc-demo-container,
+  .technology-container,
+  .calculator-container,
   .pricing-container,
   .testimonials-container,
+  .objection-container,
   .faq-container,
-  .contact-container {
+  .contact-container,
+  .partners-container,
+  .final-cta-container {
     padding: 3rem 1.25rem;
+  }
+
+  .calc-box {
+    padding: 1.25rem;
+  }
+
+  .urgency-container {
+    padding: 1.5rem 1.25rem;
   }
 
   .services-grid {
