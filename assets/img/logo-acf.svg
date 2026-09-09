@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="220" height="64" role="img" aria-label="ACF Consultores">
+  <defs>
+    <linearGradient id="acf-badge-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030045" />
+      <stop offset="31%" stop-color="#0e0eb3" />
+      <stop offset="100%" stop-color="#a1dcff" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#acf-badge-gradient)" />
+  <text
+    x="32"
+    y="34"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    font-size="24"
+    fill="#ffffff"
+    letter-spacing="0.5"
+  >ACF</text>
+
+  <text
+    x="78"
+    y="30"
+    dominant-baseline="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    font-size="20"
+    fill="#ffffff"
+  >ACF</text>
+  <text
+    x="78"
+    y="48"
+    dominant-baseline="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="400"
+    font-size="11"
+    letter-spacing="1.5"
+    fill="#ffffff"
+  >CONSULTORES</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Ilustração representando o crescimento e a estratégia da ACF Consultores">
+  <defs>
+    <linearGradient id="about-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030045" />
+      <stop offset="45%" stop-color="#0e2fb3" />
+      <stop offset="100%" stop-color="#4f9fe8" />
+    </linearGradient>
+    <linearGradient id="bar-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#e3b978" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#e3b978" stop-opacity="0.85" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" rx="32" fill="url(#about-bg)" />
+
+  <!-- decorative dot grid -->
+  <g fill="#ffffff" opacity="0.12">
+    <circle cx="60" cy="60" r="4" />
+    <circle cx="90" cy="60" r="4" />
+    <circle cx="120" cy="60" r="4" />
+    <circle cx="60" cy="90" r="4" />
+    <circle cx="90" cy="90" r="4" />
+    <circle cx="120" cy="90" r="4" />
+    <circle cx="60" cy="120" r="4" />
+    <circle cx="90" cy="120" r="4" />
+    <circle cx="120" cy="120" r="4" />
+  </g>
+
+  <!-- bar chart -->
+  <g>
+    <rect x="150" y="400" width="70" height="140" rx="10" fill="url(#bar-gradient)" />
+    <rect x="250" y="340" width="70" height="200" rx="10" fill="url(#bar-gradient)" />
+    <rect x="350" y="270" width="70" height="270" rx="10" fill="url(#bar-gradient)" />
+    <rect x="450" y="190" width="70" height="350" rx="10" fill="url(#bar-gradient)" />
+  </g>
+
+  <!-- growth line -->
+  <polyline
+    points="150,420 250,360 350,290 450,210 560,140"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.9"
+  />
+  <g fill="#ffffff">
+    <circle cx="150" cy="420" r="8" />
+    <circle cx="250" cy="360" r="8" />
+    <circle cx="350" cy="290" r="8" />
+    <circle cx="450" cy="210" r="8" />
+    <circle cx="560" cy="140" r="10" fill="#e3b978" />
+  </g>
+
+  <!-- brand badge -->
+  <g transform="translate(600,80)">
+    <rect x="0" y="0" width="120" height="60" rx="16" fill="#ffffff" opacity="0.08" />
+    <text x="60" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="26" fill="#ffffff" letter-spacing="1">ACF</text>
+  </g>
+</svg>
