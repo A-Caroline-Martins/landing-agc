@@ -13,6 +13,9 @@
   --color-gray-100: #f0f0f0;
   --color-gray-50: #f7f7f7;
   --color-white: #ffffff;
+
+  --color-agc: #b0501a;
+  --color-orflie: #B0B0B0;
 }
 
 /* ==========================================================================
@@ -48,8 +51,6 @@ body {
 }
 
 .container-about,
-.container-team,
-.clients-container,
 .contact-container {
   background-color: var(--color-gray-100);
 }
@@ -65,6 +66,12 @@ body {
   font-weight: 600;
 }
 
+.btn-cta-outline a {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 /* ==========================================================================
    Header & navigation
    ========================================================================== */
@@ -77,6 +84,7 @@ header {
 }
 
 .nav-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +105,8 @@ header {
 }
 
 .logo img {
-  width: 100px;
+  width: 140px;
+  height: auto;
 }
 
 .btn-container {
@@ -148,16 +157,37 @@ header {
   height: 20px;
 }
 
+/* Hamburger toggle — hidden on desktop, shown below the mobile breakpoint */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* CTA duplicated inside the mobile dropdown menu — hidden on desktop */
+.menu-mobile-cta {
+  display: none;
+}
+
 /* ==========================================================================
    Hero (Home)
    ========================================================================== */
 .home {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-top: 72px; /* keeps content centered below the fixed header */
+  padding-bottom: 3rem;
   background-size: cover;
 }
 
@@ -166,44 +196,54 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
 }
 
 .home-text {
   color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-kicker {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .home-text h1 {
-  width: 100%;
+  max-width: 780px;
   font-family: "Playfair Display", "Poppins", serif;
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   color: var(--color-white);
 }
 
-.home-text h2 {
-  width: 100%;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  padding: 0 3rem;
-  color: var(--color-white);
-}
-
-.home-text p {
-  width: 100%;
+.home-description {
+  max-width: 620px;
   font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  padding: 0 10rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-white);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.home-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 /* ==========================================================================
-   Sobre (About)
+   Sobre / O Problema (About)
    ========================================================================== */
 .container-about {
   border-radius: 30px 30px 0 0;
@@ -258,6 +298,38 @@ header {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
+}
+
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1 1 140px;
+}
+
+.about-stat-value {
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.about-stat-label {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--color-gray-600);
+}
+
+.about-note {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
 }
 
 .about-image {
@@ -321,146 +393,10 @@ header {
 }
 
 /* ==========================================================================
-   Equipe (Team)
+   Títulos de seção reutilizáveis
+   (usados em Como Funciona, AGC em Ação, Planos, Segmentos,
+   Depoimentos e FAQ, além de Serviços)
    ========================================================================== */
-.container-team {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1.5rem;
-  padding: 1.5rem 3rem;
-}
-
-.team-title {
-  font-family: "Playfair Display", "Poppins", serif;
-  font-size: 2.75rem;
-  font-weight: 600;
-  line-height: 1.15;
-  color: var(--color-black);
-  margin-top: 0.5rem;
-}
-
-.team-description {
-  max-width: 520px;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-gray-700);
-  margin-bottom: 1rem;
-}
-
-.team-cards {
-  flex-direction: row;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-}
-
-.team-card-member {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  width: 260px;
-  background-color: var(--color-white);
-  padding: 2.5rem 1.5rem 2rem;
-  border-radius: 24px;
-  border: 1px solid var(--color-gray-200);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.team-card-member:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
-}
-
-.team-card-photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background-color: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
-  padding: 20px;
-}
-
-.team-card-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.team-member-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.team-member-name {
-  color: var(--color-black);
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.team-member-role {
-  padding: 0.3rem 0.9rem;
-  border: 1px solid var(--color-gray-300);
-  border-radius: 999px;
-  color: var(--color-gray-600);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.team-member-social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  font-size: 0.9rem;
-}
-
-
-/* ==========================================================================
-   Serviços (Services)
-   ========================================================================== */
-.services-container {
-  background-color: var(--color-gray-100);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.25rem;
-  padding: 4rem 3rem;
-}
-
-.services-badge {
-  padding: 0.5rem 1.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: var(--color-gray-900);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
 .services-title {
   max-width: 720px;
   font-family: "Playfair Display", "Poppins", serif;
@@ -471,10 +407,266 @@ header {
   margin-bottom: 1rem;
 }
 
-.services-title em {
+.services-description {
+  max-width: 560px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Como Funciona
+   ========================================================================== */
+.how-container {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.steps-grid {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.75rem;
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
   font-family: "Playfair Display", "Poppins", serif;
-  font-style: italic;
-  color: var(--color-gray-600);
+  font-weight: 700;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.step-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-gray-700);
+}
+
+/* ==========================================================================
+   O AGC em Ação (demonstração via chat)
+   ========================================================================== */
+.agc-demo-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.chat-mock {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  margin-top: 0.5rem;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.chat-header-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3ddc71;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background-color: var(--color-gray-50);
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.chat-bubble--in {
+  align-self: flex-start;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-bottom-left-radius: 4px;
+  color: var(--color-gray-900);
+}
+
+.chat-bubble--out {
+  align-self: flex-end;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-bottom-right-radius: 4px;
+}
+
+/* ==========================================================================
+   Argumento Financeiro (Planos)
+   ========================================================================== */
+.pricing-container {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.pricing-grid {
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+}
+
+.pricing-card--highlight {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  right: 1.5rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.pricing-plan-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+
+.pricing-card--highlight .pricing-plan-name {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-price {
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.pricing-card--highlight .pricing-price {
+  color: var(--color-white);
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pricing-list li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+  color: var(--color-gray-700);
+}
+
+.pricing-list li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--color-gray-400);
+}
+
+.pricing-card--highlight .pricing-list li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pricing-card--highlight .pricing-list li::before {
+  content: "✓";
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   Serviços / Para Quem É (Segmentos)
+   ========================================================================== */
+.services-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
 }
 
 .services-grid {
@@ -529,32 +721,6 @@ header {
   color: var(--color-gray-700);
 }
 
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.service-list li {
-  position: relative;
-  padding-left: 1.2rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: var(--color-gray-700);
-}
-
-.service-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.35rem;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-black);
-}
-
 .services-bottom {
   margin-top: 1rem;
 }
@@ -577,32 +743,240 @@ header {
   font-size: 0.9rem;
 }
 
-@media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ==========================================================================
+   Prova Social (Depoimentos)
+   ========================================================================== */
+.testimonials-container {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
 }
 
-@media (max-width: 600px) {
-  .services-container {
-    padding: 3rem 1.5rem;
-  }
+.testimonials-grid {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-align: left;
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+}
+
+.testimonial-stars {
+  color: var(--color-black);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.testimonial-quote {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--color-gray-700);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonial-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.testimonial-role {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
 }
 
 /* ==========================================================================
-   Nossos Clientes / Contato (títulos)
+   Dúvidas Frequentes (FAQ)
    ========================================================================== */
-.clients-title,
-.contact-title {
-  font-family: "Playfair Display", "Poppins", serif;
-  font-size: 2.75rem;
+.faq-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.faq-list {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.faq-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 14px;
+  padding: 0 1.25rem;
+}
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 0;
   font-weight: 600;
-  line-height: 1.15;
   color: var(--color-black);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: var(--color-gray-500);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-answer {
+  padding-bottom: 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+/* ==========================================================================
+   Contato (Formulário de Proposta)
+   ========================================================================== */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.contact-title {
+  max-width: 640px;
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-black);
+}
+
+.contact-description {
+  max-width: 520px;
+  font-size: 1rem;
+  color: var(--color-gray-700);
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 10px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-black);
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: var(--color-gray-900);
+}
+
+.form-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-gray-500);
 }
 
 /* ==========================================================================
@@ -693,4 +1067,180 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-text h1 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Menu mobile (hambúrguer) */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 1rem 1.25rem;
+  }
+
+  .logo img {
+    width: 84px;
+  }
+
+  .language-selector .language-text,
+  .language-selector i {
+    display: none;
+  }
+
+  .btn-container > .btn-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-black);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  .menu.is-open {
+    max-height: 520px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-container .nav-links {
+    flex-direction: column;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .nav-container .nav-links li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-container .nav-links li a {
+    display: block;
+    padding: 0.9rem 0;
+  }
+
+  .menu-mobile-cta {
+    display: block;
+    padding: 0.5rem 1.25rem 1.25rem;
+  }
+
+  .menu-mobile-cta .btn-cta a {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Planos empilham antes das grades gerais */
+@media (max-width: 700px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .home {
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 3rem;
+  }
+
+  .container-home {
+    padding: 0 1.25rem;
+  }
+
+  .home-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .home-description {
+    font-size: 0.9rem;
+  }
+
+  .home-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-cta-row .btn-cta a {
+    display: block;
+    text-align: center;
+  }
+
+  .container-about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-stats {
+    gap: 1.25rem;
+  }
+
+  .services-title {
+    font-size: 1.75rem;
+  }
+
+  .contact-title {
+    font-size: 1.75rem;
+  }
+
+  .services-container,
+  .how-container,
+  .agc-demo-container,
+  .pricing-container,
+  .testimonials-container,
+  .faq-container,
+  .contact-container {
+    padding: 3rem 1.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    max-width: none;
+  }
 }

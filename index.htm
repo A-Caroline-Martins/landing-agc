@@ -15,23 +15,28 @@
     />
 
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>ACF Consultores</title>
+    <title>AGC Secretaria</title>
   </head>
 
   <body>
     <header>
       <nav class="nav-container">
         <div class="logo">
-          <img src="assets/img/logo-acf.svg" alt="ACF Consultores" />
+          <img src="assets/img/logo-orflie-agc.svg" alt="orflie.agc" />
         </div>
-        <div class="menu">
+        <div class="menu" id="navMenu">
           <ul class="nav-links">
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#team">Equipe</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#clients">Nossos Clientes</a></li>
+            <li><a href="#how-it-works">Como Funciona</a></li>
+            <li><a href="#pricing">Planos</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
+          <div class="menu-mobile-cta">
+            <div class="btn-cta">
+              <a href="#contact">Falar com consultor</a>
+            </div>
+          </div>
         </div>
 
         <div class="btn-container">
@@ -44,8 +49,17 @@
             <img src="assets/img/sunny-outline.svg" alt="" />
           </button>
           <div class="btn-cta">
-            <a href="#contact">Contato</a>
+            <a href="#contact">Falar com consultor</a>
           </div>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </nav>
     </header>
@@ -53,16 +67,24 @@
       <section id="home" class="home">
         <div class="container-home">
           <div class="home-text">
-            <h1 class="home-title">ACF Consultores</h1>
-            <h2 class="home-subtitle">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea,
-              excepturi!
-            </h2>
+            <p class="home-kicker">Agente de Gestão Comercial</p>
+            <h1 class="home-title">
+              Cada horário vazio é receita que não volta.
+            </h1>
             <p class="home-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam at
-              dolores nisi fugiat laudantium nostrum rem porro cupiditate optio
-              asperiores.
+              O AGC mantém sua agenda sempre cheia — confirma consultas,
+              reorganiza cancelamentos e recupera leads perdidos, todos os
+              dias da semana.
             </p>
+            <div class="home-cta-row">
+              <div class="btn-cta">
+                <a href="#contact">Falar com consultor</a>
+              </div>
+              <div class="btn-cta btn-cta-outline">
+                <a href="#how-it-works">Ver como funciona</a>
+              </div>
+            </div>
+          
           </div>
         </div>
       </section>
@@ -70,150 +92,216 @@
       <section id="about" class="about">
         <div class="container-about">
           <div class="about-texts">
-            <p class="eyebrow">
-              <span class="eyebrow-dot"></span>Sobre
-            </p>
-            <h2 class="about-title">Conheça Nossa História</h2>
+            <p class="eyebrow"><span class="eyebrow-dot"></span>O Problema</p>
+            <h2 class="about-title">O custo que sua agenda esconde</h2>
             <p class="about-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
-              illo ex exercitationem recusandae eligendi facilis cum aliquam,
-              inventore accusantium? Cumque in, alias incidunt veritatis rem
-              eveniet accusantium dolorum porro consectetur optio. Consequuntur
-              ipsa accusamus perferendis sapiente incidunt fugiat consequatur?
-              Cupiditate possimus quos debitis sint praesentium quasi nisi
-              soluta vitae ex.
+              Toda consulta que cai por falta de confirmação, todo
+              cancelamento sem reposição e todo lead que esfria sem retorno é
+              receita que já era sua e foi embora. Isoladamente parece pouco
+              — somado, é um dos maiores vazamentos de faturamento de quem
+              vive de agenda.
+            </p>
+            <div class="about-stats">
+              <div class="about-stat">
+                <span class="about-stat-value">15–20%</span>
+                <span class="about-stat-label"
+                  >taxa média de no-show em clínicas e consultórios</span
+                >
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">R$3 mil+</span>
+                <span class="about-stat-label"
+                  >perdidos por mês por profissional com agenda cheia</span
+                >
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">R$36 mil</span>
+                <span class="about-stat-label"
+                  >por ano em receita que não volta</span
+                >
+              </div>
+            </div>
+            <p class="about-note">
+              Estimativa para profissionais com 20–25 atendimentos por
+              semana, a R$200–400 por consulta.
             </p>
           </div>
           <div class="about-image">
             <div class="about-card">
               <div class="about-card-grid"></div>
               <div class="about-card-content">
-                <p class="about-card-word">ACF</p>
+                <p class="about-card-word">AGC</p>
                 <span class="about-card-divider"></span>
-                <p class="about-card-tag">Consultores</p>
+                <p class="about-card-tag">Gestão Comercial</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="team" class="team">
-        <div class="container-team">
-          <p class="eyebrow">
-            <span class="eyebrow-dot"></span>Equipe
-          </p>
-          <h2 class="team-title">Conheça Nossos Consultores</h2>
-          <p class="team-description">
-            Profissionais especializados, prontos para apoiar sua empresa em
-            cada etapa da jornada de conformidade e gestão.
+      <section id="how-it-works" class="how">
+        <div class="how-container">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>Como Funciona</p>
+          <h2 class="services-title">Três passos. Zero complicação.</h2>
+          <p class="services-description">
+            Sem trocar de sistema, sem treinar equipe. O AGC entra na sua
+            rotina do jeito que ela já funciona.
           </p>
 
-          <div class="team-cards">
-            <div class="team-card-member">
-              <div class="team-card-photo">
-                <img src="assets/img/user-solid-full.svg" alt="Team Member 1" />
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Team Member 1</h3>
-                <span class="team-member-role">CEO</span>
-              </div>
-              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 1">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <h3 class="step-title">Conectamos sua agenda</h3>
+              <p class="step-description">
+                Integramos com o sistema que você já usa — sem migração de
+                dados e sem curva de aprendizado.
+              </p>
             </div>
-            <div class="team-card-member">
-              <div class="team-card-photo">
-                <img src="assets/img/user-solid-full.svg" alt="Team Member 2" />
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Team Member 2</h3>
-                <span class="team-member-role">CEO</span>
-              </div>
-              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 2">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <h3 class="step-title">O AGC entra em ação</h3>
+              <p class="step-description">
+                Confirma consultas, reorganiza cancelamentos e faz follow-up
+                de leads automaticamente, 7 dias por semana.
+              </p>
             </div>
-            <div class="team-card-member">
-              <div class="team-card-photo">
-                <img src="assets/img/user-solid-full.svg" alt="Team Member 3" />
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Team Member 3</h3>
-                <span class="team-member-role">CEO</span>
-              </div>
-              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 3">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <h3 class="step-title">Você só aparece para atender</h3>
+              <p class="step-description">
+                Agenda cheia, pacientes confirmados, nenhum lead esquecido.
+                Você foca no que gera resultado.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" class="services">
-        <div class="services-container">
-          <span class="services-badge">Serviços</span>
+      <section id="agc-demo" class="agc-demo">
+        <div class="agc-demo-container">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>O AGC em Ação</p>
           <h2 class="services-title">
-            Soluções que sua empresa <em>pode contratar</em>
+            Assim é uma confirmação feita pelo AGC.
           </h2>
+          <p class="services-description">
+            Enquanto você atende, o AGC já está confirmando o próximo
+            paciente e respondendo os leads novos — tudo pelo WhatsApp.
+          </p>
+
+          <div class="chat-mock">
+            <div class="chat-header">
+              <span class="chat-header-dot"></span>
+              AGC · online
+            </div>
+            <div class="chat-body">
+              <div class="chat-bubble chat-bubble--in">
+                Olá! Lembrando que sua consulta é amanhã às 15h. Posso
+                confirmar sua presença?
+              </div>
+              <div class="chat-bubble chat-bubble--out">
+                Sim! Estarei lá ✅
+              </div>
+              <div class="chat-bubble chat-bubble--in">
+                Perfeito! Consulta confirmada 🎉 Até amanhã!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <div class="pricing-container">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>Argumento Financeiro
+          </p>
+          <h2 class="services-title">Menos custo, mais resultado.</h2>
+          <p class="services-description">
+            Compare o custo real de uma secretária CLT com o do AGC —
+            disponibilidade contínua, sem encargos.
+          </p>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <span class="pricing-plan-name">Secretária CLT</span>
+              <span class="pricing-price">R$4.300/mês</span>
+              <ul class="pricing-list">
+                <li>73% em encargos trabalhistas</li>
+                <li>Férias e 13º salário</li>
+                <li>Rescisão como passivo oculto</li>
+                <li>Ausências e imprevistos</li>
+              </ul>
+            </div>
+            <div class="pricing-card pricing-card--highlight">
+              <span class="pricing-badge">Recomendado</span>
+              <span class="pricing-plan-name">AGC Orflie</span>
+              <span class="pricing-price">R$2.200/mês</span>
+              <ul class="pricing-list">
+                <li>Zero encargos trabalhistas</li>
+                <li>Zero 13º e férias</li>
+                <li>Disponibilidade contínua</li>
+                <li>Custo previsível e fixo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="segments" class="services">
+        <div class="services-container">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>Para Quem É</p>
+          <h2 class="services-title">Feito para quem vive de agenda.</h2>
+          <p class="services-description">
+            Negócios onde cada horário tem um valor — e cada falha nele,
+            também.
+          </p>
 
           <div class="services-grid">
-
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-file-lines"></i>
+                <i class="fa-solid fa-tooth"></i>
               </div>
-              <h3 class="service-card-title">Carga Tributária</h3>
-              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
-              <p class="service-description">
-                Análise de oportunidades legais para otimizar a tributação
-                direta e indireta, revisando práticas fiscais, custos e
-                logística.
+              <h3 class="service-card-title">Dentistas</h3>
+              <p class="service-card-description">
+                Alto volume de consultas recorrentes, onde cada slot vazio
+                pesa direto no faturamento do mês.
               </p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-file-lines"></i>
+                <i class="fa-solid fa-house-medical"></i>
               </div>
-              <h3 class="service-card-title">Carga Tributária</h3>
-              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
-              <p class="service-description">
-                Análise de oportunidades legais para otimizar a tributação
-                direta e indireta, revisando práticas fiscais, custos e
-                logística.
+              <h3 class="service-card-title">Clínicas</h3>
+              <p class="service-card-description">
+                Múltiplos profissionais e agendas cruzadas, onde um
+                cancelamento exige reação imediata.
               </p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-file-lines"></i>
+                <i class="fa-solid fa-scale-balanced"></i>
               </div>
-              <h3 class="service-card-title">Carga Tributária</h3>
-              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
-              <p class="service-description">
-                Análise de oportunidades legais para otimizar a tributação
-                direta e indireta, revisando práticas fiscais, custos e
-                logística.
+              <h3 class="service-card-title">Advogados</h3>
+              <p class="service-card-description">
+                Audiências e reuniões que exigem confirmação constante e
+                nenhuma margem para falha.
               </p>
             </div>
             <div class="service-card">
               <div class="service-icon">
-                <i class="fa-solid fa-file-lines"></i>
+                <i class="fa-solid fa-handshake"></i>
               </div>
-              <h3 class="service-card-title">Carga Tributária</h3>
-              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
-              <p class="service-description">
-                Análise de oportunidades legais para otimizar a tributação
-                direta e indireta, revisando práticas fiscais, custos e
-                logística.
+              <h3 class="service-card-title">Consultores</h3>
+              <p class="service-card-description">
+                Coaches e consultores que faturam por hora sentem na conta
+                cada horário que não se confirma.
               </p>
             </div>
-
-            
           </div>
 
           <div class="services-bottom">
             <div class="btn-cta btn-cta-whatsapp">
               <a href="#contact">
-                <span>Quero solicitar um diagnóstico</span>
+                <span>Quero ver se o AGC serve pra mim</span>
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
             </div>
@@ -221,44 +309,126 @@
         </div>
       </section>
 
-      <section id="clients" class="clients">
-        <div class="clients-container">
-          <h2 class="clients-title">Nossos Clientes</h2>
-          <h3 class="clients-subtitle">Depoimentos</h3>
-          <p class="clients-description">
-            Conheça os cases de sucesso de nossos clientes e veja como a ACF
-            Consultores pode ajudar você a
-          </p>
+      <section id="testimonials" class="testimonials">
+        <div class="testimonials-container">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>Prova Social</p>
+          <h2 class="services-title">Resultados reais, agendas reais.</h2>
 
-          <div class="clients-content">
-            <h3 class="client-title">Client 1</h3>
-            <p class="client-description">Client 1 description</p>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Antes perdíamos consultas por no-show toda semana. No
+                primeiro mês com o AGC, os cancelamentos sem aviso quase
+                zeraram."
+              </p>
+              <div class="testimonial-author">
+                <span class="testimonial-avatar">A</span>
+                <div>
+                  <p class="testimonial-name">Dra. Ana Lima</p>
+                  <p class="testimonial-role">Dentista · São Paulo, SP</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Trocamos secretária e sistema de agendamento pelo AGC.
+                Reduzimos custo e ainda convertemos mais leads."
+              </p>
+              <div class="testimonial-author">
+                <span class="testimonial-avatar">R</span>
+                <div>
+                  <p class="testimonial-name">Dr. Rafael Souza</p>
+                  <p class="testimonial-role">Advogado · Curitiba, PR</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Em 30 dias o follow-up automático já tinha recuperado leads
+                que a gente considerava perdidos."
+              </p>
+              <div class="testimonial-author">
+                <span class="testimonial-avatar">P</span>
+                <div>
+                  <p class="testimonial-name">Dra. Paula Medeiros</p>
+                  <p class="testimonial-role">
+                    Clínica de Estética · Belo Horizonte, MG
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div class="boxes-clients">
-            <div class="box-client">
-              <h3 class="client-title">Client 1</h3>
-              <p class="client-description">Client 1 description</p>
-            </div>
-            <div class="box-client">
-              <h3 class="client-title">Client 1</h3>
-              <p class="client-description">Client 1 description</p>
-            </div>
-            <div class="box-client">
-              <h3 class="client-title">Client 1</h3>
-              <p class="client-description">Client 1 description</p>
-            </div>
+      <section id="faq" class="faq">
+        <div class="faq-container">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>Dúvidas Frequentes
+          </p>
+          <h2 class="services-title">
+            Perguntas que a maioria faz antes de contratar.
+          </h2>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Qual é o valor do AGC?</summary>
+              <p class="faq-answer">
+                O valor varia conforme o volume de atendimentos e as
+                funcionalidades contratadas. Na conversa inicial, montamos
+                uma proposta sob medida para o seu negócio.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Preciso trocar meu sistema de agendamento?</summary>
+              <p class="faq-answer">
+                Não. O AGC se integra ao sistema que você já usa — sem
+                migração de dados e sem mudança de rotina.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>E se eu quiser cancelar?</summary>
+              <p class="faq-answer">
+                Sem fidelidade. Você cancela quando quiser, sem multa e sem
+                burocracia.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Em quanto tempo eu vejo resultado?</summary>
+              <p class="faq-answer">
+                A maioria dos clientes percebe redução de no-show já na
+                primeira semana. Em 30 dias o impacto financeiro já é
+                mensurável.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>O AGC substitui minha secretária?</summary>
+              <p class="faq-answer">
+                Não necessariamente. O AGC assume a gestão comercial da
+                agenda — confirmações, follow-up e reagendamentos. Sua
+                secretária, se você tiver uma, fica livre para o atendimento
+                presencial.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
       <section id="contact" class="contact">
         <div class="contact-container">
-          <h2 class="contact-title">Contato</h2>
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>Solicite sua Proposta
+          </p>
+          <h2 class="contact-title">
+            Receba uma proposta personalizada em até 24h.
+          </h2>
 
           <p class="contact-description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-            perspiciatis unde odio.
+            Sem compromisso. Preencha os dados abaixo e falamos com você pelo
+            WhatsApp.
           </p>
 
           <div class="contact-form">
@@ -268,15 +438,26 @@
                 <input type="text" id="name" name="name" required />
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <label for="whatsapp">WhatsApp</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required />
               </div>
               <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea id="message" name="message" required></textarea>
+                <label for="segment">Qual é o seu segmento?</label>
+                <select id="segment" name="segment" required>
+                  <option value="">Selecione</option>
+                  <option value="dentista">Dentista</option>
+                  <option value="clinica">Clínica médica ou estética</option>
+                  <option value="advogado">Advogado</option>
+                  <option value="consultor">Consultor / Coach</option>
+                  <option value="terapeuta">Terapeuta</option>
+                  <option value="outro">Outro</option>
+                </select>
               </div>
-              <button type="submit">Enviar</button>
+              <button type="submit">Quero minha proposta →</button>
             </form>
+            <p class="form-note">
+              Seus dados são usados apenas para entrar em contato. Sem spam.
+            </p>
           </div>
         </div>
       </section>
@@ -285,16 +466,17 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-brand">
-          <h3 class="footer-logo">ACF Consultores</h3>
+          <h3 class="footer-logo">AGC Secretaria</h3>
           <p class="footer-tagline">
-            Estratégia tributária e de negócios — excelência e resultado.
+            O comercial da sua agenda não pode falhar. O AGC garante que não
+            vai.
           </p>
           <div class="footer-socials">
             <a href="#" class="social-icon" aria-label="Instagram">
-              <ion-icon name="logo-instagram"></ion-icon>
+              <i class="fa-brands fa-instagram"></i>
             </a>
             <a href="#" class="social-icon" aria-label="LinkedIn">
-              <ion-icon name="logo-linkedin"></ion-icon>
+              <i class="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
         </div>
@@ -302,8 +484,10 @@
         <div class="footer-column">
           <h4 class="footer-heading">Navegação</h4>
           <ul>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#contact">Acesse</a></li>
+            <li><a href="#how-it-works">Como Funciona</a></li>
+            <li><a href="#pricing">Planos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contato</a></li>
           </ul>
         </div>
 
@@ -326,18 +510,11 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 ACFS Consultores. Todos os direitos reservados.</p>
+        <p>© 2026 AGC Secretaria. Todos os direitos reservados.</p>
         <p>Desenvolvido com excelência</p>
       </div>
     </footer>
 
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script src="assets/js/nav.js"></script>
   </body>
 </html>
