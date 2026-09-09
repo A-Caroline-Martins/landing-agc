@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
       rel="stylesheet"
     />
 
@@ -70,8 +70,8 @@
       <section id="about" class="about">
         <div class="container-about">
           <div class="about-texts">
-            <p class="about-eyebrow">
-              <span class="about-eyebrow-dot"></span>Sobre
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>Sobre
             </p>
             <h2 class="about-title">Conheça Nossa História</h2>
             <p class="about-description">
@@ -99,33 +99,51 @@
 
       <section id="team" class="team">
         <div class="container-team">
-          <h2 class="team-title">Equipe</h2>
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>Equipe
+          </p>
+          <h2 class="team-title">Conheça Nossos Consultores</h2>
           <p class="team-description">
-            Conheça nossos consultores especializados, prontos para atender você
-            e sua empresa.
+            Profissionais especializados, prontos para apoiar sua empresa em
+            cada etapa da jornada de conformidade e gestão.
           </p>
 
           <div class="team-cards">
             <div class="team-card-member">
-              <img src="assets/img/user-solid-full.svg" alt="Team Member 1" />
+              <div class="team-card-photo">
+                <img src="assets/img/user-solid-full.svg" alt="Team Member 1" />
+              </div>
               <div class="team-member-info">
                 <h3 class="team-member-name">Team Member 1</h3>
-                <p class="team-member-role">CEO</p>
+                <span class="team-member-role">CEO</span>
               </div>
+              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 1">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
             </div>
             <div class="team-card-member">
-              <img src="assets/img/user-solid-full.svg" alt="Team Member 2" />
+              <div class="team-card-photo">
+                <img src="assets/img/user-solid-full.svg" alt="Team Member 2" />
+              </div>
               <div class="team-member-info">
                 <h3 class="team-member-name">Team Member 2</h3>
-                <p class="team-member-role">CEO</p>
+                <span class="team-member-role">CEO</span>
               </div>
+              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 2">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
             </div>
             <div class="team-card-member">
-              <img src="assets/img/user-solid-full.svg" alt="Team Member 3" />
+              <div class="team-card-photo">
+                <img src="assets/img/user-solid-full.svg" alt="Team Member 3" />
+              </div>
               <div class="team-member-info">
                 <h3 class="team-member-name">Team Member 3</h3>
-                <p class="team-member-role">CEO</p>
+                <span class="team-member-role">CEO</span>
               </div>
+              <a href="#" class="team-member-social" aria-label="LinkedIn de Team Member 3">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -133,36 +151,71 @@
 
       <section id="services" class="services">
         <div class="services-container">
-          <h2 class="services-title">Serviços</h2>
-          <h3 class="services-subtitle">Aplicações</h3>
-          <p class="services-description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-            perspiciatis unde odio.
-          </p>
+          <span class="services-badge">Serviços</span>
+          <h2 class="services-title">
+            Soluções que sua empresa <em>pode contratar</em>
+          </h2>
 
-          <div class="services-content">
-            <h3 class="service-title">Service 1</h3>
-            <p class="service-description">Service 1 description</p>
-          </div>
+          <div class="services-grid">
 
-          <div class="boxes-services">
-            <div class="box-service">
-              <h3 class="service-title">Service 1</h3>
-              <p class="service-description">Service 1 description</p>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <h3 class="service-card-title">Carga Tributária</h3>
+              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
+              <p class="service-description">
+                Análise de oportunidades legais para otimizar a tributação
+                direta e indireta, revisando práticas fiscais, custos e
+                logística.
+              </p>
             </div>
-            <div class="box-service">
-              <h3 class="service-title">Service 1</h3>
-              <p class="service-description">Service 1 description</p>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <h3 class="service-card-title">Carga Tributária</h3>
+              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
+              <p class="service-description">
+                Análise de oportunidades legais para otimizar a tributação
+                direta e indireta, revisando práticas fiscais, custos e
+                logística.
+              </p>
             </div>
-            <div class="box-service">
-              <h3 class="service-title">Service 1</h3>
-              <p class="service-description">Service 1 description</p>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <h3 class="service-card-title">Carga Tributária</h3>
+              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
+              <p class="service-description">
+                Análise de oportunidades legais para otimizar a tributação
+                direta e indireta, revisando práticas fiscais, custos e
+                logística.
+              </p>
             </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <h3 class="service-card-title">Carga Tributária</h3>
+              <h3 class="service-card-subtitle">Redução de Carga Tributária</h3>
+              <p class="service-description">
+                Análise de oportunidades legais para otimizar a tributação
+                direta e indireta, revisando práticas fiscais, custos e
+                logística.
+              </p>
+            </div>
+
+            
           </div>
 
           <div class="services-bottom">
-            <div class="btn-cta">
-              <a href="#contact">Quero solicitar um serviço</a>
+            <div class="btn-cta btn-cta-whatsapp">
+              <a href="#contact">
+                <span>Quero solicitar um diagnóstico</span>
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
             </div>
           </div>
         </div>

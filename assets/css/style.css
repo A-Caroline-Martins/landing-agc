@@ -1,4 +1,21 @@
 /* ==========================================================================
+   Paleta de cores (preto, branco e tons derivados)
+   ========================================================================== */
+:root {
+  --color-black: #000000;
+  --color-gray-900: #1a1a1a;
+  --color-gray-700: #404040;
+  --color-gray-600: #595959;
+  --color-gray-500: #737373;
+  --color-gray-400: #999999;
+  --color-gray-300: #cccccc;
+  --color-gray-200: #e0e0e0;
+  --color-gray-100: #f0f0f0;
+  --color-gray-50: #f7f7f7;
+  --color-white: #ffffff;
+}
+
+/* ==========================================================================
    Reset & base
    ========================================================================== */
 * {
@@ -21,28 +38,28 @@ html {
 }
 
 body {
-  color: #333;
+  color: var(--color-gray-700);
   background: linear-gradient(
     45deg,
-    rgb(2, 81, 146) 0%,
-    rgb(14, 91, 179) 31%,
-    rgba(161, 220, 255, 1) 100%
+    var(--color-black) 0%,
+    var(--color-gray-900) 31%,
+    var(--color-gray-200) 100%
   );
 }
 
 .container-about,
 .container-team,
-.services-container,
 .clients-container,
 .contact-container {
-  background-color: #fdf4ef;
+  background-color: var(--color-gray-100);
 }
 
 /* Shared CTA pill button (used in the nav and inside page sections) */
 .btn-cta a {
   display: inline-block;
-  background-color: #e3b978;
-  color: #030045;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1.5px solid var(--color-black);
   padding: 10px 24px;
   border-radius: 999px;
   font-weight: 600;
@@ -64,7 +81,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: #030045;
+  background-color: var(--color-black);
 }
 
 .nav-container .nav-links {
@@ -76,7 +93,7 @@ header {
 }
 
 .nav-container .nav-links li a {
-  color: white;
+  color: var(--color-white);
 }
 
 .logo img {
@@ -97,7 +114,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
   background-color: rgba(255, 255, 255, 0.08);
-  color: white;
+  color: var(--color-white);
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
@@ -122,7 +139,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.08);
-  color: white;
+  color: var(--color-white);
   cursor: pointer;
 }
 
@@ -152,16 +169,17 @@ header {
 }
 
 .home-text {
-  color: white;
+  color: var(--color-white);
 }
 
 .home-text h1 {
   width: 100%;
+  font-family: "Playfair Display", "Poppins", serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--color-white);
 }
 
 .home-text h2 {
@@ -171,7 +189,7 @@ header {
   line-height: 1.2;
   margin-bottom: 1rem;
   padding: 0 3rem;
-  color: white;
+  color: var(--color-white);
 }
 
 .home-text p {
@@ -181,7 +199,7 @@ header {
   line-height: 1.2;
   padding: 0 10rem;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--color-white);
 }
 
 /* ==========================================================================
@@ -208,33 +226,35 @@ header {
   max-width: 560px;
 }
 
-.about-eyebrow {
+/* Reusable eyebrow label (small dot + uppercase text), used above section titles */
+.eyebrow {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #e3b978;
+  color: var(--color-gray-600);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
-.about-eyebrow-dot {
+.eyebrow-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #e3b978;
+  background-color: var(--color-gray-600);
 }
 
 .about-title {
-  color: #030045;
+  color: var(--color-black);
+  font-family: "Playfair Display", "Poppins", serif;
   font-size: 2.75rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
 }
 
 .about-description {
-  color: #141414;
+  color: var(--color-gray-900);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -255,9 +275,9 @@ header {
   justify-content: center;
   overflow: hidden;
   border-radius: 24px;
-  background-color: #030045;
+  background-color: var(--color-black);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 30px 60px rgba(3, 0, 69, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
 .about-card-grid {
@@ -282,14 +302,14 @@ header {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #f4e9d8;
+  color: var(--color-white);
 }
 
 .about-card-divider {
   width: 60px;
   height: 1px;
   margin: 1rem 0;
-  background-color: rgba(227, 185, 120, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .about-card-tag {
@@ -315,55 +335,281 @@ header {
 }
 
 .team-title {
+  font-family: "Playfair Display", "Poppins", serif;
   font-size: 2.75rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
-  color: #030045;
+  color: var(--color-black);
+  margin-top: 0.5rem;
 }
 
 .team-description {
+  max-width: 520px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
+  color: var(--color-gray-700);
+  margin-bottom: 1rem;
 }
 
 .team-cards {
   flex-direction: row;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 2.5rem;
 }
 
 .team-card-member {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  background-color: #d1e6f0;
-  padding: 1.5rem;
+  gap: 1.25rem;
+  width: 260px;
+  background-color: var(--color-white);
+  padding: 2.5rem 1.5rem 2rem;
   border-radius: 24px;
-  box-shadow: 0 10px 20px rgba(3, 0, 69, 0.1);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.team-card-member img {
-  border-radius: 20px;
-  width: 200px;
-  height: 200px;
-  background-color: #f7f7f7;
+.team-card-member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+.team-card-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  padding: 20px;
+}
+
+.team-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.team-member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .team-member-name {
-  color: #030045;
+  color: var(--color-black);
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
+.team-member-role {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 999px;
+  color: var(--color-gray-600);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.team-member-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   Serviços (Services)
+   ========================================================================== */
+.services-container {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 4rem 3rem;
+}
+
+.services-badge {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-gray-900);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.services-title {
+  max-width: 720px;
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+}
+
+.services-title em {
+  font-family: "Playfair Display", "Poppins", serif;
+  font-style: italic;
+  color: var(--color-gray-600);
+}
+
+.services-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.9rem;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 1.1rem;
+}
+
+.service-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-black);
+}
+
+.service-card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-gray-600);
+}
+
+.service-card-description {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-gray-700);
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-gray-700);
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+}
+
+.services-bottom {
+  margin-top: 1rem;
+}
+
+.btn-cta-whatsapp a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-cta-whatsapp i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Nossos Clientes / Contato (títulos)
+   ========================================================================== */
+.clients-title,
+.contact-title {
+  font-family: "Playfair Display", "Poppins", serif;
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-black);
+}
 
 /* ==========================================================================
    Rodapé (Footer)
    ========================================================================== */
 .footer {
-  background-color: #04001a;
+  background-color: var(--color-black);
   color: rgba(255, 255, 255, 0.7);
   padding: 3rem 2rem 1.5rem;
 }
@@ -382,7 +628,9 @@ header {
 }
 
 .footer-logo {
-  color: white;
+  color: var(--color-white);
+  font-family: "Playfair Display", "Poppins", serif;
+  font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
 }
@@ -406,12 +654,12 @@ header {
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  color: white;
+  color: var(--color-white);
   font-size: 1.1rem;
 }
 
 .footer-heading {
-  color: #e3b978;
+  color: var(--color-gray-400);
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -431,7 +679,7 @@ header {
 }
 
 .footer-column a:hover {
-  color: white;
+  color: var(--color-white);
 }
 
 .footer-bottom {
