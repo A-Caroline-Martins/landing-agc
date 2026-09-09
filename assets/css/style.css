@@ -1104,7 +1104,7 @@ header {
    Fecho Final (CTA)
    ========================================================================== */
 .final-cta-container {
-  background-color: var(--color-agc);
+  background-color: var(--color-black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1150,7 +1150,7 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--color-agc);
+  color: var(--color-gray-900);
 }
 
 .final-cta-buttons .btn-cta-outline a {
