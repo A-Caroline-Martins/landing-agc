@@ -37,7 +37,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px; /* offset for the fixed header on anchor links */
+  scroll-padding-top: 72px; 
 }
 
 body {
@@ -55,7 +55,6 @@ body {
   background-color: var(--color-gray-100);
 }
 
-/* Shared CTA pill button (used in the nav and inside page sections) */
 .btn-cta a {
   display: inline-block;
   background-color: var(--color-white);
@@ -115,30 +114,6 @@ header {
   gap: 0.75rem;
 }
 
-.language-selector {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: var(--color-white);
-  font-size: 0.9rem;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.language-selector .flag-icon {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.language-selector i {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .btn-theme {
   display: flex;
   align-items: center;
@@ -157,7 +132,7 @@ header {
   height: 20px;
 }
 
-/* Hamburger toggle — hidden on desktop, shown below the mobile breakpoint */
+/* Hamburger toggle */
 .nav-toggle {
   display: none;
   align-items: center;
@@ -172,7 +147,6 @@ header {
   cursor: pointer;
 }
 
-/* CTA duplicated inside the mobile dropdown menu — hidden on desktop */
 .menu-mobile-cta {
   display: none;
 }
@@ -186,7 +160,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 72px; /* keeps content centered below the fixed header */
+  padding-top: 72px;
   padding-bottom: 3rem;
   background-size: cover;
 }
@@ -707,13 +681,6 @@ header {
   color: var(--color-black);
 }
 
-.service-card-subtitle {
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--color-gray-600);
-}
-
 .service-card-description {
   font-size: 0.9rem;
   font-weight: 400;
@@ -1099,11 +1066,6 @@ header {
 
   .logo img {
     width: 84px;
-  }
-
-  .language-selector .language-text,
-  .language-selector i {
-    display: none;
   }
 
   .btn-container > .btn-cta {
