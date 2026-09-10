@@ -41,6 +41,39 @@
   --text-icon-check: "✓";
   --text-faq-closed: "+";
   --text-faq-open: "–";
+
+  /* Tokens semânticos de tema (claro por padrão) — alternados via
+     [data-theme] em <html>, ver assets/js/theme.js */
+  --surface-1: var(--color-white);
+  --surface-2: var(--color-gray-100);
+  --surface-3: var(--color-gray-50);
+  --surface-invert: var(--color-black);
+  --ink-invert: var(--color-white);
+  --ink-1: var(--color-black);
+  --ink-2: var(--color-gray-700);
+  --ink-3: var(--color-gray-600);
+  --ink-4: var(--color-gray-500);
+  --ink-5: var(--color-gray-400);
+  --border-1: var(--color-gray-200);
+  --border-2: var(--color-gray-300);
+  --body-gradient-end: var(--color-gray-200);
+}
+
+/* Tema escuro — ativado via [data-theme="dark"] no <html> */
+:root[data-theme="dark"] {
+  --surface-1: #141414;
+  --surface-2: #1c1c1c;
+  --surface-3: #202020;
+  --surface-invert: #2a2a2a;
+  --ink-invert: #ffffff;
+  --ink-1: #f5f5f5;
+  --ink-2: #d4d4d4;
+  --ink-3: #b0b0b0;
+  --ink-4: #8a8a8a;
+  --ink-5: #6b6b6b;
+  --border-1: #333333;
+  --border-2: #3d3d3d;
+  --body-gradient-end: #0d0d0d;
 }
 
 /* ==========================================================================
@@ -66,18 +99,18 @@ html {
 }
 
 body {
-  color: var(--color-gray-700);
+  color: var(--ink-2);
   background: linear-gradient(
     45deg,
     var(--color-black) 0%,
     var(--color-gray-900) 31%,
-    var(--color-gray-200) 100%
+    var(--body-gradient-end) 100%
   );
 }
 
 .container-about,
 .contact-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--surface-2);
 }
 
 .btn-cta a {
@@ -187,7 +220,10 @@ header {
   text-align: center;
   padding-top: 72px;
   padding-bottom: 3rem;
+  background-image: url("../img/hero-bg.svg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .container-home {
@@ -270,7 +306,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-gray-600);
+  color: var(--ink-3);
   font-size: var(--font-size-xs);
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -281,11 +317,11 @@ header {
   width: 6px;
   height: 6px;
   border-radius: var(--radius-circle);
-  background-color: var(--color-gray-600);
+  background-color: var(--ink-3);
 }
 
 .about-title {
-  color: var(--color-black);
+  color: var(--ink-1);
   font-family: "Playfair Display", "Poppins", serif;
   font-size: var(--font-title-lg);
   font-weight: 600;
@@ -293,7 +329,7 @@ header {
 }
 
 .about-description {
-  color: var(--color-gray-900);
+  color: var(--ink-1);
   font-size: var(--font-size-md);
   font-weight: 400;
   line-height: 1.6;
@@ -317,18 +353,18 @@ header {
   font-family: "Playfair Display", "Poppins", serif;
   font-size: 1.9rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .about-stat-label {
   font-size: var(--font-size-xs);
   line-height: 1.4;
-  color: var(--color-gray-600);
+  color: var(--ink-3);
 }
 
 .about-note {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
+  color: var(--ink-4);
 }
 
 .about-image {
@@ -402,7 +438,7 @@ header {
   font-size: var(--font-title-md);
   font-weight: 600;
   line-height: 1.3;
-  color: var(--color-black);
+  color: var(--ink-1);
   margin-bottom: 1rem;
 }
 
@@ -411,7 +447,7 @@ header {
   font-size: var(--font-size-md);
   font-weight: 400;
   line-height: 1.6;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
   margin-bottom: 1rem;
 }
 
@@ -419,7 +455,7 @@ header {
    Como Funciona
    ========================================================================== */
 .how-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,8 +479,8 @@ header {
   align-items: flex-start;
   text-align: left;
   gap: 0.75rem;
-  background-color: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-3);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
 }
@@ -456,8 +492,8 @@ header {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-circle);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   font-family: "Playfair Display", "Poppins", serif;
   font-weight: 700;
 }
@@ -465,20 +501,20 @@ header {
 .step-title {
   font-size: var(--font-size-lg);
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .step-description {
   font-size: var(--font-size-base);
   line-height: 1.5;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 /* ==========================================================================
    O AGC em Ação (demonstração via chat)
    ========================================================================== */
 .agc-demo-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--surface-2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -490,8 +526,8 @@ header {
 .chat-mock {
   width: 100%;
   max-width: 420px;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   overflow: hidden;
   text-align: left;
@@ -503,8 +539,8 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   padding: 0.75rem 1rem;
   font-size: var(--font-size-sm);
   font-weight: 600;
@@ -522,7 +558,7 @@ header {
   flex-direction: column;
   gap: 0.6rem;
   padding: 1rem;
-  background-color: var(--color-gray-50);
+  background-color: var(--surface-3);
 }
 
 .chat-bubble {
@@ -535,16 +571,16 @@ header {
 
 .chat-bubble--in {
   align-self: flex-start;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-bottom-left-radius: 4px;
-  color: var(--color-gray-900);
+  color: var(--ink-1);
 }
 
 .chat-bubble--out {
   align-self: flex-end;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   border-bottom-right-radius: 4px;
 }
 
@@ -552,7 +588,7 @@ header {
    Tecnologia Própria
    ========================================================================== */
 .technology-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -596,7 +632,7 @@ header {
   height: auto;
   display: block;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--border-1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -624,7 +660,7 @@ header {
    Antes de Decidir (objeção)
    ========================================================================== */
 .objection-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--surface-2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -637,7 +673,7 @@ header {
    Programa de Parcerias
    ========================================================================== */
 .partners-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -647,10 +683,11 @@ header {
 }
 
 /* ==========================================================================
-   Calculadora de Perda
-   ========================================================================== */
+   Calculadora de Perda — DESATIVADA (a calculadora não vai ser necessária
+   por enquanto; seção removida do HTML). Mantido comentado como referência.
+   ==========================================================================
 .calculator-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--surface-2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -666,18 +703,19 @@ header {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   text-align: left;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   padding: 2rem;
   margin-top: 0.5rem;
 }
+*/
 
 /* ==========================================================================
    Argumento Financeiro (Planos)
    ========================================================================== */
 .pricing-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -701,16 +739,16 @@ header {
   flex-direction: column;
   gap: 1rem;
   text-align: left;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
 }
 
 .pricing-card--highlight {
-  background-color: var(--color-black);
-  border-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  border-color: var(--surface-invert);
+  color: var(--ink-invert);
 }
 
 .pricing-badge {
@@ -732,7 +770,7 @@ header {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-gray-500);
+  color: var(--ink-4);
 }
 
 .pricing-card--highlight .pricing-plan-name {
@@ -743,11 +781,11 @@ header {
   font-family: "Playfair Display", "Poppins", serif;
   font-size: 2rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .pricing-card--highlight .pricing-price {
-  color: var(--color-white);
+  color: var(--ink-invert);
 }
 
 .pricing-list {
@@ -760,7 +798,7 @@ header {
   position: relative;
   padding-left: 1.3rem;
   font-size: var(--font-size-base);
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 .pricing-list li::before {
@@ -768,7 +806,7 @@ header {
   position: absolute;
   left: 0;
   font-weight: 700;
-  color: var(--color-gray-400);
+  color: var(--ink-5);
 }
 
 .pricing-card--highlight .pricing-list li {
@@ -777,14 +815,14 @@ header {
 
 .pricing-card--highlight .pricing-list li::before {
   content: var(--text-icon-check);
-  color: var(--color-white);
+  color: var(--ink-invert);
 }
 
 /* ==========================================================================
    Serviços / Para Quem É (Segmentos)
    ========================================================================== */
 .services-container {
-  background-color: var(--color-gray-100);
+  background-color: var(--surface-2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -807,7 +845,7 @@ header {
   align-items: flex-start;
   text-align: left;
   gap: 0.9rem;
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
 }
@@ -819,8 +857,8 @@ header {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-circle);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   font-size: var(--font-size-lg);
 }
 
@@ -828,14 +866,14 @@ header {
   font-size: var(--font-size-lg);
   font-weight: 600;
   line-height: 1.3;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .service-card-description {
   font-size: var(--font-size-base);
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 .services-bottom {
@@ -855,8 +893,8 @@ header {
   width: 26px;
   height: 26px;
   border-radius: var(--radius-circle);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   font-size: var(--font-size-base);
 }
 
@@ -864,7 +902,7 @@ header {
    Prova Social (Depoimentos)
    ========================================================================== */
 .testimonials-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -887,14 +925,14 @@ header {
   flex-direction: column;
   gap: 0.9rem;
   text-align: left;
-  background-color: var(--color-gray-50);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-3);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
 }
 
 .testimonial-stars {
-  color: var(--color-black);
+  color: var(--ink-1);
   font-size: var(--font-size-sm);
   letter-spacing: 0.1em;
 }
@@ -907,7 +945,7 @@ header {
   font-size: var(--font-size-base);
   line-height: 1.5;
   font-style: italic;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 .testimonial-author {
@@ -923,8 +961,8 @@ header {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-circle);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   font-weight: 700;
   font-size: var(--font-size-sm);
   flex-shrink: 0;
@@ -933,19 +971,19 @@ header {
 .testimonial-name {
   font-size: var(--font-size-base);
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .testimonial-role {
   font-size: 0.75rem;
-  color: var(--color-gray-500);
+  color: var(--ink-4);
 }
 
 /* ==========================================================================
    Dúvidas Frequentes (FAQ)
    ========================================================================== */
 .faq-container {
-  background-color: var(--color-white);
+  background-color: var(--surface-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -965,8 +1003,8 @@ header {
 }
 
 .faq-item {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: var(--radius-md);
   padding: 0 1.25rem;
 }
@@ -980,7 +1018,7 @@ header {
   cursor: pointer;
   padding: 1rem 0;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -990,7 +1028,7 @@ header {
 .faq-item summary::after {
   content: var(--text-faq-closed);
   font-size: 1.2rem;
-  color: var(--color-gray-500);
+  color: var(--ink-4);
   flex-shrink: 0;
 }
 
@@ -1002,7 +1040,7 @@ header {
   padding-bottom: 1.1rem;
   font-size: var(--font-size-base);
   line-height: 1.6;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 /* ==========================================================================
@@ -1023,13 +1061,13 @@ header {
   font-size: var(--font-title-md);
   font-weight: 600;
   line-height: 1.3;
-  color: var(--color-black);
+  color: var(--ink-1);
 }
 
 .contact-description {
   max-width: 520px;
   font-size: var(--font-size-md);
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 .contact-form {
@@ -1049,17 +1087,17 @@ header {
 .form-group label {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--color-gray-700);
+  color: var(--ink-2);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   padding: 0.75rem 1rem;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--border-2);
   border-radius: var(--radius-sm);
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--surface-1);
+  color: var(--ink-1);
   font-family: inherit;
   font-size: 0.95rem;
 }
@@ -1073,14 +1111,14 @@ header {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-black);
+  border-color: var(--ink-1);
 }
 
 .contact-form button[type="submit"] {
   width: 100%;
   padding: 0.9rem;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--surface-invert);
+  color: var(--ink-invert);
   border: none;
   border-radius: var(--radius-pill);
   font-family: inherit;
@@ -1097,7 +1135,7 @@ header {
   margin-top: 0.75rem;
   font-size: var(--font-size-xs);
   text-align: center;
-  color: var(--color-gray-500);
+  color: var(--ink-4);
 }
 
 /* ==========================================================================
@@ -1365,8 +1403,7 @@ header {
 
 /* Planos empilham antes das grades gerais */
 @media (max-width: 700px) {
-  .pricing-grid,
-  .calc-box {
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1425,7 +1462,6 @@ header {
   .how-container,
   .agc-demo-container,
   .technology-container,
-  .calculator-container,
   .pricing-container,
   .testimonials-container,
   .objection-container,
@@ -1434,10 +1470,6 @@ header {
   .partners-container,
   .final-cta-container {
     padding: 3rem 1.25rem;
-  }
-
-  .calc-box {
-    padding: 1.25rem;
   }
 
   .urgency-container {
