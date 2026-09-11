@@ -9,10 +9,8 @@
   --color-2: #c94f0c;
   --color-3: #dd4a00;
   --color-4: #f2d5af;
-  --color-5: #fff1dd;
   --color-6: #fff9f1;
   --color-7: #ffffffb3;
-  --color-8: #ffffffd9;
   --color-9: #a17b5b;
   --color-10: #fff8f2;
   --color-11: #e0e0e0;
@@ -23,11 +21,13 @@
   --color-16: #3ddc71;
   --color-17: #5e5858;
   --color-18: #f0c389;
-  --color-19: #ffffff99;
   --color-20: #171310;
   --color-21: #a5370066;
   --color-22: #fff1dd;
-  --color-shadow-2: #ad3a00;
+  --color-23: #797979;
+  --color-24: #dbdbdb;
+  --color-25: #dfdfdf;
+  --color-shadow: #ad3a00;
   --bg-gradient: linear-gradient(to right, #a53700, #c94f0c, #dd4a00);
 
   --font-size-xs: 0.8rem;
@@ -58,9 +58,9 @@
   /* Tokens semânticos de tema (claro por padrão) — alternados via
      [data-theme] em <html>, ver assets/js/theme.js. Cada um mapeia pra
      paleta numerada acima; as cores de marca (--color-1..4, --color-14,
-     --color-16, --color-18/19, --color-black/white, sombras e o
-     --bg-gradient) ficam fixas nos dois temas — só as superfícies e as
-     tintas de texto neutras é que trocam. */
+     --color-16, --color-18/19, --color-black/white e o --bg-gradient)
+     ficam fixas nos dois temas — só as superfícies, as tintas de texto
+     neutras e as sombras é que trocam. */
   --surface-1: var(--color-white);
   --surface-2: var(--color-6);
   --surface-3: var(--color-12);
@@ -73,6 +73,15 @@
   --ink-4: var(--color-14);
   --ink-5: var(--color-15);
   --ink-accent: var(--color-1);
+
+  /* Sombras — cinza/neutro no tema claro, alaranjado no escuro (ver
+     override abaixo). Nomeadas pelo peso visual, não pelo elemento. */
+  --shadow-soft: var(--color-25); /* service-card, testimonial-card */
+  --shadow-card: var(--color-24); /* step-card, pricing-card */
+  --shadow-elevated: var(--color-23); /* about-card */
+  --shadow-cta: var(--color-21); /* botões services/contact/partners, hovers do header */
+  --shadow-hero: var(--color-shadow); /* botões home/final-cta/urgency */
+  --shadow-contact: rgba(0, 0, 0, 0.18); /* camada justa de "apoio", fixa nos dois temas */
 }
 
 /* Tema escuro — ativado via [data-theme="dark"] no <html> */
@@ -89,6 +98,14 @@
   --ink-4: #e2a476;
   --ink-5: #ddd0c2;
   --ink-accent: #ff7a45;
+
+  /* Mesmo alaranjado do --ink-accent escuro, com opacidade crescente
+     conforme o blur/peso de cada sombra (mais discreta que no claro). */
+  --shadow-soft: #ff7a4524;
+  --shadow-card: #ff7a452e;
+  --shadow-elevated: #ff7a4538;
+  --shadow-cta: #ff7a4547;
+  --shadow-hero: #ff7a4557;
 }
 
 /* ==========================================================================
@@ -118,6 +135,24 @@ body {
   background: var(--bg-gradient);
 }
 
+/* ==========================================================================
+   Animações de entrada ao rolar (scroll reveal)
+   Classe e estado aplicados via assets/js/reveal.js — sem JS, nada fica
+   oculto (a classe .reveal só existe se o script rodar).
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .container-about,
 .contact-container {
   background-color: var(--surface-2);
@@ -131,6 +166,9 @@ body {
   padding: 10px 24px;
   border-radius: var(--radius-pill);
   font-weight: 600;
+  box-shadow:
+    0 2px 4px var(--shadow-contact),
+    0px 6px 20px var(--shadow-cta);
   transition: 0.3s ease-out;
 }
 
@@ -140,8 +178,7 @@ body {
   border: 1.5px solid var(--color-3);
 }
 
-
-.btn-cta-no-outline a {
+.btn-cta-light a {
   background-color: var(--color-white);
   color: var(--color-2);
   border: 1.5px solid var(--color-white);
@@ -152,11 +189,44 @@ body {
   color: var(--color-white);
   border: 1.5px solid var(--color-white);
 }
-/*
-.btn-cta a:hover {
-  box-shadow: 0px 4px 18px var(--color-21);
+.home .btn-cta a,
+.final-cta .btn-cta a,
+.urgency .btn-cta a {
+  box-shadow:
+    0 2px 4px var(--shadow-contact),
+    0px 10px 30px var(--shadow-hero);
 }
-*/
+
+.services .btn-cta a,
+.contact form button,
+.partners .btn-cta a {
+  box-shadow:
+    0 2px 4px var(--shadow-contact),
+    0px 6px 20px var(--shadow-cta);
+}
+
+.btn-cta a:hover {
+  background-color: var(--color-1);
+  color: var(--color-white);
+  border-color: var(--color-1);
+  box-shadow:
+    0 4px 8px var(--shadow-contact),
+    0px 10px 28px var(--shadow-cta);
+  transform: translateY(-2px);
+}
+
+.home .btn-cta a:hover,
+.final-cta .btn-cta a:hover,
+.urgency .btn-cta a:hover {
+  box-shadow:
+    0 4px 8px var(--shadow-contact),
+    0px 14px 34px var(--shadow-hero);
+}
+
+.btn-cta-dark a:hover {
+  background-color: var(--color-1);
+  border-color: var(--color-1);
+}
 
 /* ==========================================================================
    Header & navigation
@@ -187,12 +257,31 @@ header {
 }
 
 .nav-container .nav-links li a {
+  position: relative;
+  display: inline-block;
   color: var(--color-white);
   transition: color 0.2s ease;
 }
 
+.nav-container .nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
 .nav-container .nav-links li a:hover {
   color: var(--color-4);
+}
+
+.nav-container .nav-links li a:hover::after {
+  transform: scaleX(1);
 }
 
 .logo img {
@@ -219,11 +308,9 @@ header {
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
-/*
 .btn-theme:hover {
-  box-shadow: 0px 4px 18px var(--color-21);
+  box-shadow: 0px 4px 18px var(--shadow-cta);
 }
-*/
 .btn-theme img {
   width: 20px;
   height: 20px;
@@ -244,10 +331,10 @@ header {
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
-/*
+
 .nav-toggle:hover {
-  box-shadow: 0px 4px 18px var(--color-21);
-}*/
+  box-shadow: 0px 4px 18px var(--shadow-cta);
+}
 
 .menu-mobile-cta {
   display: none;
@@ -292,7 +379,7 @@ header {
 }
 
 .home-text h1 {
-  max-width: 780px;
+  width: 100%;
   font-family: "Playfair Display", "Poppins", serif;
   font-size: var(--font-title-lg);
   font-weight: 600;
@@ -302,7 +389,7 @@ header {
 }
 
 .home-description {
-  max-width: 620px;
+  max-width: 80%;
   font-size: var(--font-size-md);
   font-weight: 400;
   line-height: 1.6;
@@ -318,8 +405,39 @@ header {
   margin-bottom: 1.75rem;
 }
 
-/*
-.btn-cta-no-outline a:hover {
+/* Entrada do hero — dispara sozinha ao carregar, sem esperar scroll */
+.home-kicker,
+.home-text h1,
+.home-description,
+.home-cta-row {
+  animation: home-fade-up 0.7s ease both;
+}
+
+.home-kicker {
+  animation-delay: 0s;
+}
+.home-text h1 {
+  animation-delay: 0.12s;
+}
+.home-description {
+  animation-delay: 0.24s;
+}
+.home-cta-row {
+  animation-delay: 0.36s;
+}
+
+@keyframes home-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-cta-light a:hover {
   background-color: var(--color-1);
   color: var(--color-white);
   border: 1.5px solid var(--color-1);
@@ -329,8 +447,7 @@ header {
   background-color: var(--color-22);
   color: var(--color-3);
   border: 1.5px solid var(--color-4);
-  transition: 0.3s ease-out;
-}*/
+}
 /* ==========================================================================
    Sobre / O Problema (About)
    ========================================================================== */
@@ -437,6 +554,7 @@ header {
   border-radius: var(--radius-xl);
   background-color: var(--color-black);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 4px 18px var(--shadow-elevated);
 }
 
 .about-card-grid {
@@ -532,6 +650,7 @@ header {
   border: 1px solid var(--border-2);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
+  box-shadow: 0px 4px 18px var(--shadow-card);
 }
 
 .step-number {
@@ -600,6 +719,19 @@ header {
   height: 8px;
   border-radius: var(--radius-circle);
   background-color: var(--color-16);
+  animation: chat-pulse 2s ease-out infinite;
+}
+
+@keyframes chat-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(61, 220, 113, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(61, 220, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(61, 220, 113, 0);
+  }
 }
 
 .chat-body {
@@ -797,6 +929,7 @@ header {
   border: 1px solid var(--border-1);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
+  box-shadow: 0px 4px 18px var(--shadow-card);
 }
 
 .pricing-card--highlight {
@@ -809,8 +942,8 @@ header {
   position: absolute;
   top: -14px;
   right: 1.5rem;
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-22);
+  color: var(--color-14);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -902,6 +1035,7 @@ header {
   background-color: var(--surface-1);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
+  box-shadow: 1px 2px 12px var(--shadow-soft);
 }
 
 .service-icon {
@@ -932,9 +1066,9 @@ header {
 
 .services-bottom {
   margin-top: 1rem;
-  }
-  
-  /*
+}
+
+/*
 .btn-cta-zap a {
   display: inline-flex;
   align-items: center;
@@ -953,25 +1087,6 @@ header {
   border-color: var(--color-1);
   color: var(--color-white);
 }*/
-
-.service-btn-cta-whatsapp a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.service-btn-cta-whatsapp i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-circle);
-  background-color: var(--color-16);
-  color: var(--color-white);
-  font-size: var(--font-size-base);
-}
 
 /* ==========================================================================
    Prova Social (Depoimentos)
@@ -1004,6 +1119,7 @@ header {
   border: 1px solid var(--border-2);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
+  box-shadow: 1px 2px 12px var(--shadow-soft);
 }
 
 .testimonial-stars {
@@ -1118,6 +1234,21 @@ header {
   color: var(--ink-2);
 }
 
+.faq-item[open] .faq-answer {
+  animation: faq-fade-in 0.35s ease;
+}
+
+@keyframes faq-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    Contato (Formulário de Proposta)
    ========================================================================== */
@@ -1198,16 +1329,20 @@ header {
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-    background-color: var(--color-3);
+  background-color: var(--color-3);
   color: var(--color-white);
   border: 1.5px solid var(--color-3);
+  transition: 0.3s ease-out;
 }
 
-
-/*
 .contact-form button[type="submit"]:hover {
   background-color: var(--color-1);
-}*/
+  border-color: var(--color-1);
+  box-shadow:
+    0 4px 8px var(--shadow-contact),
+    0px 10px 28px var(--shadow-cta);
+  transform: translateY(-2px);
+}
 
 .form-note {
   margin-top: 0.75rem;
@@ -1262,20 +1397,6 @@ header {
   gap: 1rem;
 }
 
-.final-cta-buttons .btn-cta-calender a {
-  background-color: var(--color-4);
-  border-color: var(--color-4);
-  color: var(--color-2);
-}
-.final-cta-buttons .btn-cta-calender a:hover {
-  background-color: var(--color-18);
-  border-color: var(--color-18);
-  color: var(--color-2);
-}
-.final-cta-buttons .btn-cta-calender i {
-  color: var(--color-3);
-}
-
 .final-cta-buttons .btn-cta a {
   display: inline-flex;
   align-items: center;
@@ -1304,17 +1425,6 @@ header {
   gap: 0.4rem;
   color: #ffffffcc;
   font-size: var(--font-size-sm);
-}
-
-.partners-btn-cta a {
-  background-color: var(--color-white);
-  color: var(--color-3);
-  border: 1.5px solid var(--color-3);
-}
-.partners-btn-cta a:hover {
-  background-color: var(--color-3);
-  border-color: var(--color-3);
-  color: var(--color-white);
 }
 
 /* ==========================================================================
@@ -1414,6 +1524,26 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: var(--font-size-xs);
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   Acessibilidade — desliga as animações para quem pede menos movimento
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .home-kicker,
+  .home-text h1,
+  .home-description,
+  .home-cta-row,
+  .chat-header-dot,
+  .faq-item[open] .faq-answer {
+    animation: none;
+  }
 }
 
 /* ==========================================================================
