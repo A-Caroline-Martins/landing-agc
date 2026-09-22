@@ -285,8 +285,8 @@ header {
 }
 
 .logo img {
-  width: 140px;
-  height: auto;
+  height: 40px;
+  width: auto;
 }
 
 .btn-container {
@@ -1450,10 +1450,8 @@ header {
 }
 
 .footer-logo {
-  color: var(--color-white);
-  font-family: "Playfair Display", "Poppins", serif;
-  font-weight: 600;
-  font-size: 1.25rem;
+  height: 56px;
+  width: auto;
   margin-bottom: 0.75rem;
 }
 
@@ -1575,7 +1573,7 @@ header {
   }
 
   .logo img {
-    width: 84px;
+    height: 32px;
   }
 
   .btn-container > .btn-cta {
