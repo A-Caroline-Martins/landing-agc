@@ -115,24 +115,65 @@
       <section id="home" class="home">
         <div class="container-home">
           <div class="home-text">
-            <p class="home-kicker">Agente de Gestão Comercial</p>
+            <div class="home-badges">
+              <span class="home-badge home-badge--solid">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                Agente de Gestão Comercial
+              </span>
+              <span class="home-badge">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Apenas 10% por venda
+              </span>
+            </div>
             <h1 class="home-title">
-              Cada horário vazio é receita que não volta.
+              Transforme <span class="home-highlight">R$&nbsp;10.000</span> em
+              uma operação inteligente
             </h1>
             <p class="home-description">
-              O AGC mantém sua agenda sempre cheia — confirma consultas,
-              reorganiza cancelamentos e recupera leads perdidos, todos os dias
-              da semana.
+              Implementamos uma solução completa para o seu escritório. Nossa
+              participação é de apenas 10% sobre cada venda, o restante é seu.
             </p>
-            <div class="home-cta-row">
-              <div class="btn-cta btn-cta-light">
-                <a href="#contact">Falar com consultor</a>
-              </div>
-              <div class="btn-cta btn-cta-outline">
-                <a href="#how-it-works">Ver como funciona</a>
-              </div>
-            </div>
           </div>
+
+          <form class="home-form">
+            <p class="home-form-title">
+              Fale com a gente
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </p>
+            <div class="form-group">
+              <label class="sr-only" for="home-name">Nome</label>
+              <input
+                type="text"
+                id="home-name"
+                name="name"
+                autocomplete="name"
+                placeholder="Nome"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="home-email">E-mail</label>
+              <input
+                type="email"
+                id="home-email"
+                name="email"
+                autocomplete="email"
+                placeholder="E-mail"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="home-message">Mensagem</label>
+              <textarea
+                id="home-message"
+                name="message"
+                rows="2"
+                placeholder="Mensagem"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Enviar mensagem</button>
+          </form>
         </div>
       </section>
 
