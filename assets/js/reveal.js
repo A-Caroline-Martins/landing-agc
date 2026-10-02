@@ -52,7 +52,6 @@
     ".agc-demo-container > .services-title",
     ".agc-demo-container > .services-description",
     ".technology-content",
-    ".technology-image",
     ".urgency-container > *",
     ".objection-container > *",
     ".pricing-container > .eyebrow",

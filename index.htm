@@ -214,14 +214,24 @@
             </p>
           </div>
           <div class="about-image">
-            <div class="about-card">
-              <div class="about-card-grid"></div>
-              <div class="about-card-content">
-                <p class="about-card-word">AGC</p>
-                <span class="about-card-divider"></span>
-                <p class="about-card-tag">Gestão Comercial</p>
-              </div>
-            </div>
+            <figure class="about-photo">
+              <img
+                src="assets/img/equipe-atendimento.jpg"
+                alt="Duas atendentes com headset sorrindo enquanto olham a tela do computador"
+                width="1000"
+                height="1793"
+                loading="lazy"
+              />
+              <figcaption class="about-photo-badge">
+                <span class="about-photo-badge-icon">
+                  <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                </span>
+                <span class="about-photo-badge-text">
+                  <strong>Agenda sempre cheia</strong>
+                  <small>AGC · Gestão Comercial</small>
+                </span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -237,7 +247,7 @@
 
           <div class="steps-grid">
             <div class="step-card">
-              <span class="step-number">1</span>
+              <span class="step-number">01</span>
               <h3 class="step-title">Conectamos sua agenda</h3>
               <p class="step-description">
                 Integramos com o sistema que você já usa — sem migração de dados
@@ -245,7 +255,7 @@
               </p>
             </div>
             <div class="step-card">
-              <span class="step-number">2</span>
+              <span class="step-number">02</span>
               <h3 class="step-title">O AGC entra em ação</h3>
               <p class="step-description">
                 Confirma consultas, reorganiza cancelamentos e faz follow-up de
@@ -253,7 +263,7 @@
               </p>
             </div>
             <div class="step-card">
-              <span class="step-number">3</span>
+              <span class="step-number">03</span>
               <h3 class="step-title">Você só aparece para atender</h3>
               <p class="step-description">
                 Agenda cheia, pacientes confirmados, nenhum lead esquecido. Você
@@ -346,17 +356,6 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="technology-image">
-            <img
-              src="assets/img/dashboard-mock.svg"
-              alt="Dashboard Orflie mostrando agendados, confirmados, no-shows e atividade recente em tempo real"
-              width="340"
-              height="380"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
       </section>
@@ -649,31 +648,62 @@
 
           <div class="contact-form">
             <form>
-              <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div class="form-group">
-                <label for="whatsapp">WhatsApp</label>
-                <input type="tel" id="whatsapp" name="whatsapp" required />
+              <div class="contact-form-row">
+                <div class="form-group">
+                  <label for="name">Nome</label>
+                  <div class="input-icon">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      autocomplete="name"
+                      placeholder="Seu nome"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="whatsapp">WhatsApp</label>
+                  <div class="input-icon">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <input
+                      type="tel"
+                      id="whatsapp"
+                      name="whatsapp"
+                      autocomplete="tel"
+                      placeholder="(00) 00000-0000"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label for="segment">Qual é o seu segmento?</label>
-                <select id="segment" name="segment" required>
-                  <option value="">Selecione</option>
-                  <option value="dentista">Dentista</option>
-                  <option value="clinica">Clínica médica ou estética</option>
-                  <option value="advogado">Advogado</option>
-                  <option value="consultor">Consultor / Coach</option>
-                  <option value="terapeuta">Terapeuta</option>
-                  <option value="outro">Outro</option>
-                </select>
+                <div class="input-icon input-icon--select">
+                  <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                  <select id="segment" name="segment" required>
+                    <option value="">Selecione</option>
+                    <option value="dentista">Dentista</option>
+                    <option value="clinica">Clínica médica ou estética</option>
+                    <option value="advogado">Advogado</option>
+                    <option value="consultor">Consultor / Coach</option>
+                    <option value="terapeuta">Terapeuta</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                  <i
+                    class="fa-solid fa-chevron-down input-chevron"
+                    aria-hidden="true"
+                  ></i>
+                </div>
               </div>
               <button class="btn-cta-dark" type="submit">
                 Quero minha proposta
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </button>
             </form>
             <p class="form-note">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
               Seus dados são usados apenas para entrar em contato. Sem spam.
             </p>
           </div>
