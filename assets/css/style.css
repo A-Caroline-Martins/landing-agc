@@ -984,14 +984,53 @@ header {
 /* ==========================================================================
    Antes de Decidir (objeção)
    ========================================================================== */
+/* Vídeo à esquerda, textos à direita; empilha (vídeo em cima) no mobile */
 .objection-container {
   background-color: var(--surface-2);
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 1.25rem;
+  gap: 3rem;
   padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+/* Efeito da foto do Sobre, mais discreto: bloco laranja deslocado atrás */
+.objection-media {
+  position: relative;
+  flex: 1 1 380px;
+  max-width: 560px;
+  display: flex;
+  margin: 0 0 10px 10px;
+}
+
+.objection-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(-10px, 10px);
+  border-radius: var(--radius-xl);
+  background: var(--bg-gradient);
+}
+
+.objection-video {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: 0px 4px 18px var(--shadow-elevated);
+  pointer-events: none;
+}
+
+.objection-texts {
+  flex: 1 1 380px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.25rem;
 }
 
 /* ==========================================================================
