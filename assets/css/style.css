@@ -2,7 +2,7 @@
    Paleta de cores
    ========================================================================== */
 :root {
-  /* Paleta nova (quente: creme → laranja → vermelho → vinho) */
+  /* Paleta (quente: creme → laranja → terracota → vinho) */
   --cream: #f4e9cd;
   --off-white: #f6f2e7;
   --gold: #f7ce8c;
@@ -10,8 +10,6 @@
   --orange: #f0973c;
   --orange-dark: #e1652e;
   --terracotta: #d55532;
-  --red: #ca4632;
-  --red-dark: #b3372b;
   --wine: #751d1e;
   --wine-dark: #440e14;
 
@@ -20,19 +18,16 @@
   /* Paleta numerada (usada no resto do CSS) mapeada pra paleta nova.
      Brancos e pretos mantidos, só puxados pra um tom quente que combina. */
   --color-1: var(--orange-dark);
-  --color-2: var(--terracotta);
   --color-4: var(--gold);
   --color-6: var(--off-white);
   --color-7: #ffffffb3;
   --color-8: #b84412;
   --color-9: #9c6b52;
   --color-11: #e8dcc6;
-  --color-12: var(--off-white);
   --color-14: var(--wine);
   --color-15: #2b2224;
   --color-16: #3ddc71;
   --color-17: #5e4f4c;
-  --color-20: var(--wine-dark);
   --color-22: var(--cream);
   --color-23: #7a6a66;
   --color-24: #e2d8cc;
@@ -69,15 +64,12 @@
   --text-faq-closed: "+";
   --text-faq-open: "–";
 
- 
   --surface-1: var(--color-white);
   --surface-2: var(--color-6);
-  --surface-3: var(--color-12);
   --border-1: var(--color-11);
   --ink-1: var(--color-0);
   --ink-2: var(--color-17);
   --ink-3: var(--color-8);
-  --ink-4: var(--color-14);
   --ink-5: var(--color-15);
   --ink-6: var(--color-9);
   --ink-accent: var(--color-1);
@@ -86,16 +78,14 @@
   --shadow-elevated: var(--color-23); /* about-photo */
 }
 
-/* Tema escuro  */
+/* Tema escuro */
 :root[data-theme="dark"] {
   --surface-1: #170e0f;
   --surface-2: #1d1213;
-  --surface-3: #241718;
   --border-1: #3d2a2a;
   --ink-1: var(--off-white);
   --ink-2: #d9c7ae;
   --ink-3: var(--orange-light);
-  --ink-4: var(--orange);
   --ink-5: #e8dcc4;
   --ink-accent: var(--orange-dark);
 
@@ -968,25 +958,8 @@ header {
   box-shadow: 0px 12px 30px var(--shadow-card);
 }
 
-/* Ícone num quadrado com o gradiente da marca */
-.technology-feature .service-icon {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: var(--bg-gradient);
-  color: var(--color-white);
-}
-
 .technology-feature .service-card-title {
   margin-bottom: 0.4rem;
-  color: var(--ink-1, var(--wine-dark));
-}
-
-.technology-feature .service-card-description {
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  color: var(--ink-2);
 }
 
 /* ==========================================================================
@@ -1008,14 +981,6 @@ header {
   font-size: var(--font-size-md);
   font-weight: 600;
 }
-/*
-.btn-cta-vaga a:hover {
-  background-color: var(--color-5);
-  color: var(--orange-dark);
-  border: 1.5px solid var(--color-5);
-  transition: 0.3s ease-out;
-}*/
-
 /* ==========================================================================
    Antes de Decidir (objeção)
    ========================================================================== */
@@ -1260,27 +1225,6 @@ header {
 .services-bottom {
   margin-top: 1rem;
 }
-
-/*
-.btn-cta-zap a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background-color: var(--orange-dark);
-  color: var(--color-white);
-  border: 1.5px solid var(--orange-dark);
-  padding: 10px 24px;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: 0.3s ease-out;
-}
-
-.btn-cta-zap a:hover {
-  background-color: var(--orange);
-  color: var(--wine-dark);
-  border-color: var(--orange);
-  color: var(--color-white);
-}*/
 
 /* ==========================================================================
    Prova Social (Depoimentos)
@@ -1623,7 +1567,6 @@ header {
   height: 52px;
   margin-top: 0.5rem;
   padding: 0 1rem;
-  border: none;
   border-radius: var(--radius-pill);
   font-family: inherit;
   font-size: 0.95rem;
