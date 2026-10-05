@@ -12,8 +12,18 @@
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+              const el = entry.target;
+              el.classList.add("is-visible");
+              observer.unobserve(el);
+              // Depois de entrar, tira o atraso da cascata pra ele não
+              // atrasar também o hover dos cards.
+              if (el.style.transitionDelay) {
+                el.addEventListener(
+                  "transitionend",
+                  () => el.style.removeProperty("transition-delay"),
+                  { once: true }
+                );
+              }
             }
           });
         },
@@ -23,7 +33,9 @@
   function reveal(el, delayMs) {
     if (!el) return;
     el.classList.add("reveal");
-    if (delayMs) el.style.transitionDelay = delayMs + "ms";
+    if (delayMs && !prefersReducedMotion) {
+      el.style.transitionDelay = delayMs + "ms";
+    }
     if (prefersReducedMotion) {
       el.classList.add("is-visible");
     } else {
