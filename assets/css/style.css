@@ -1644,6 +1644,38 @@ header {
   color: var(--ink-3);
 }
 
+/* Aviso de envio do formulário (sucesso/erro) — some sozinho após 3s */
+.form-status {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background-color: #ffffffd9;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-status[hidden] {
+  display: none;
+}
+
+.form-status.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.form-status--success {
+  color: #1a7f5a;
+}
+
+.form-status--error {
+  color: var(--wine);
+}
+
 /* ==========================================================================
    Fecho Final (CTA)
    ========================================================================== */
